@@ -1,0 +1,23 @@
+{
+  "name": "robots",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^2.6.2",
+    "express": "~4.16.1",
+    "express-session": "^1.16.2",
+    "http-errors": "^1.7.3",
+    "md5": "^2.2.1",
+    "morgan": "~1.9.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

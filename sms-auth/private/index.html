@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Авторизация</title>
+        <meta name="description" content="Получить секретное слово могут только сотрудники Студии Alyukovnet">
+        <meta name="author" content="Телефон для связи: +79999999999 (Данила)">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Press+Start+2P|Robotos&display=swap');
+
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                color: #333;
+                font-size: 18px;
+                font-family: 'Roboto', sans-serif;
+                background: #F2E205;
+            }
+            a:link, a:visited, a:hover, a:active {
+                text-decoration: none;
+                color: #333;
+            }
+            input {
+                outline: none;
+            }
+            article {
+                height: 250px;
+                width: 450px;
+                margin: auto auto;
+                padding: 15px;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: #D98E04;
+                position: absolute;
+                text-align: center;
+            }
+            h1 {
+                text-align: center;
+                color: #7b3114;
+                font-size: 1.5em;
+                font-family: 'Press Start 2P', cursive;
+            }
+            p {
+                padding: 0;
+                margin: 0 0 10px 0;
+            }
+            .field, .button {
+                border: none;
+                border-radius: 30px;
+                height: 40px;
+                box-sizing: border-box;
+                padding: 0 10px;
+                font-size: 1.1em;
+                text-align: center;
+                transition: 200ms linear;
+                background: #F2E205;
+            }
+            .field {
+                font-family: 'Major Mono Display', monospace;
+                width: 80%;
+            }
+            .field:disabled {
+                background: rgb(218, 203, 5);
+                color: #444;
+            }
+            .button {
+                width: 50%;
+                color: #fff;
+                background: #5C12A6;
+                cursor: pointer;
+                font-size: .9em;
+            }
+            .button:hover {
+                background: #7F25D9;
+            }
+            .button:active {
+                background: #2F0459;
+            }
+            #code {
+                display: none;
+            }
+            #submit {
+                margin-top: 10px;
+                display: none;
+            }
+            #status {
+                font-size: .8em;
+                color: #fff;
+                background: #7b3114;
+                position: absolute;
+                margin: 0;
+                padding: 5px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+            .error {
+                background: rgb(184, 0, 0) !important;
+            }
+        </style>
+    </head>
+    <body>
+        <article>
+            <h1>Авторизация</h1>
+            <form>
+                <p><input type="tel" id="phone" class="field" placeholder="Номер телефона" autofocus></p>
+                <p>
+                    <input type="button" id="code" class="button" value="">
+                    <input type="submit" id="getsms" class="button" value="Получить СМС-код">
+                </p>
+                <p><input type="button" id="submit" class="button" value="Войти"></p>
+            </form>
+            <p id="status">Телефон должен соответствовать формату: +79ХХХХХХХХХ</p>
+        </article>
+        <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+        <script src="script.min.js"></script>
+    </body>
+</html>

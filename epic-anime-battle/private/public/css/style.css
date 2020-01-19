@@ -1,0 +1,107 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css?family=Pangolin&display=swap&subset=cyrillic');
+
+
+html {
+    font-family: 'Pangolin', sans-serif;
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 2.6em;
+    display: inline-block;
+    border-bottom: 5px solid #ff9c00;
+}
+
+#fire {
+    position: absolute;
+    width: 1em;
+    border-bottom: 5px solid #ff9c00;
+}
+
+#header {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    margin: 10px 0 1em 0;
+}
+
+#wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#rules p {
+    padding: 0.5em;
+}
+
+#disable {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+#rules {
+    width: 26%;
+    padding: 10px;
+    text-align: center;
+}
+
+#first-image img:first-child{
+    height: 350px;
+    display: block;
+    float: right;
+    cursor: pointer;
+}
+
+#second-image img:first-child{
+    height: 350px;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+
+.image {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.coolness {
+    z-index: -1;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    width: 90%;
+    left: 5%;
+    pointer-events: none;
+    animation: wayDown 1s 1 ease-in-out;
+}
+
+.do-animation {
+    animation: wayDown 1s 1 ease-in-out;
+}
+
+.image img {
+    margin-bottom: 0.5rem;
+}
+
+#load {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+}
+
+@keyframes wayDown {
+    0% {opacity: 1; transform: translateY(-200%); z-index: 2}
+    100% {opacity: 0; transform: translateY(0); z-index: 2}
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Авторизация</title>
+</head>
+<body>
+    <div id="unlog-wrapper">
+        <form method="POST" id="login-container">
+            <h2 id="unlog-title">Одмен панель<img id="loading" src="images/loading.svg" alt="loading"></h2>
+            <div id="user-success"></div>
+            <input id="loginp" type="text" name="login" placeholder="Логин" maxlength="30">
+            <input id="passinp" type="password" name="password" placeholder="Пароль" maxlength="30">
+            <input id="sublog" type="button" name="sublog" onclick="signIn()" value="Войти">
+        </form>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

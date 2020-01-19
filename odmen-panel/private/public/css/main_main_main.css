@@ -1,0 +1,51 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+
+body {
+    overflow: hidden;
+    font-size: 30px;
+    font-family: 'Mansalva', cursive; 
+}
+
+video {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    right: 0;
+    bottom: 0;
+}
+
+#character {
+    
+    position: fixed;
+    right: 5rem;
+    top: 1rem;
+    min-width: 10rem;
+    opacity: 0.8;
+    transform: rotate(-5deg)
+}
+
+#character img {
+    max-width: 400px;
+}
+
+#character h2 {
+    position: absolute;
+    width: 100%;
+    top: 0.5rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 1rem #000;
+}
+
+#click {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 1rem #000;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    cursor: default;
+}

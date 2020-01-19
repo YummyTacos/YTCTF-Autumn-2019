@@ -1,0 +1,44 @@
+version: '3'
+services:
+    secure-chat:
+        build: secure-chat/private/server
+        image: "ytctf-autumn/secure-chat:server"
+        restart: on-failure
+        ports:
+            - "27000:8080"
+    fotostorage:
+        build: fotostorage/private
+        image: "ytctf-autumn/fotostorage"
+        restart: on-failure
+        ports:
+            - "27001:80"
+    epic-anime-battle:
+        build: epic-anime-battle/private
+        image: "ytctf-autumn/epic-anime-battle"
+        restart: on-failure
+        ports:
+            - "27002:3000"
+    ne-prosto:
+        build: ne-prosto/private
+        image: "ytctf-autumn/ne-prosto"
+        restart: on-failure
+        ports:
+            - "27003:33333"
+    tic-tac-toe:
+        build: tic-tac-toe/private
+        image: "ytctf-autumn/tic-tac-toe"
+        restart: on-failure
+        ports:
+            - "27004:33333"
+    money:
+        build: money/private
+        image: "ytctf-autumn/money"
+        restart: on-failure
+        ports:
+            - "27005:80"
+    odmen-panel:
+        build: odmen-panel/private
+        image: "ytctf-autumn/odmen-panel"
+        restart: on-failure
+        ports:
+            - "27006:3000"

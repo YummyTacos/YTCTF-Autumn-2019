@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>YTCTF WebSocket chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #msgText {
+            display: inline-block;
+            width: 85vw;
+        }
+
+        #send {
+            width: 14vw;
+            padding: 0;
+            margin-left: 1vw;
+        }
+
+        #sendForm {
+            display: flex;
+            width: calc(100vw - 1rem);
+            margin: 0.5rem 0.5rem 0;
+            position: fixed;
+            top: 0;
+        }
+
+        #messagesContainer, #messages {
+            display: flex;
+            flex-grow: 1;
+            min-height: 0;
+            flex-direction: column;
+            width: calc(100vw - 1rem);
+        }
+
+        #messagesContainer {
+            height: calc(100vh - 3.5rem);
+            margin: 3rem 0.5rem 0;
+            border: 1px solid gray;
+        }
+
+        #messages {
+            overflow: auto;
+            max-width: calc(100vw - 1rem);
+            overflow-wrap: break-word;
+            margin: 0;
+        }
+
+        .message {
+            margin-top: 0;
+            font-family: "Roboto Mono", monospace;
+            font-size: 12px;
+            white-space: pre-line;
+        }
+
+        @media (max-width: 576px) {
+            #send {
+                width: 29vw;
+            }
+
+            #msgText {
+                width: 70vw;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="sendForm">
+    <input type="text" id="msgText" placeholder="Введите сообщение">
+    <button id="send">Отправить</button>
+</div>
+<div id="messagesContainer">
+    <div id="messages"></div>
+</div>
+<script>
+    var ws_url = "wss://secure-chat.ctf.yummytacos.me/";
+    var ws = new WebSocket(ws_url);
+    var input = document.getElementById('msgText');
+
+    function sendMessage(text) {
+        ws.send(text);
+    }
+
+    function sendMessageAndClearInput() {
+        sendMessage(input.value);
+        input.value = '';
+    }
+
+    function insertMessage(text) {
+        const message = document.createElement('p');
+        message.className = 'message';
+        message.innerHTML = text;
+        document.getElementById('messages').insertAdjacentElement('afterbegin', message);
+    }
+
+    ws.onmessage = function (event) {
+        insertMessage(event.data);
+    };
+    ws.onclose = function () {
+        insertMessage('Вы были отключены от сервера. Обновите страницу.')
+    };
+    document.getElementById('send').onclick = sendMessageAndClearInput;
+    input.onkeypress = function (ev) {
+        if (ev.keyCode === 13) {
+            sendMessageAndClearInput();
+        }
+        return true;
+    };
+</script>
+</body>
+</html>

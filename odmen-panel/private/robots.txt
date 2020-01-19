@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /public/
+Disallow: /app.js
+Disallow: /views/all.ejs
+Disallow: /views/error.ejs
+Disallow: /views/index.ejs
+Disallow: /views/odmen.ejs
+Disallow: /routes/all.js
+Disallow: /routes/index.js
+Disallow: /private/users.json
+Disallow: /server.js
+Disallow: /node_modules
+Disallow: /public/tacos.txt
+Disallow: /images/loading.svg
+Disallow: /tools/generate_password.js

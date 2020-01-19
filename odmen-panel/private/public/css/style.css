@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&subset=cyrillic');
+@import "reset.css";
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#unlog-wrapper {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+#login-container {
+  min-width: 400px;
+  margin: auto;
+}
+
+
+#user-error {
+  font-size: 20px;
+  color: #f0021f;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#user-success {
+  font-size: 20px;
+  color: rgb(255, 120, 0);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#loginp, #passinp, #email {
+  width: 300px;
+  height: 50px;
+  padding: 0 20px;
+  background: rgba(255, 105, 30, 0.4);
+  border: 4px solid rgba(33, 55, 255, 0);
+  font-size: 20px;
+  transition: 0.15s;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  display: block;
+  outline: none;
+}
+
+#loginp:hover, #passinp:hover, #email:hover {
+  background: rgba(252, 252, 252, 0.4);
+  border: 4px solid #f76375;
+}
+
+#loginp:focus, #passinp:focus, #email:focus {
+  width: 360px;
+  background: rgba(252, 252, 252, 0.4);
+  border: 4px solid #f0021f;
+}
+
+#unlog-title {
+  font-size: 31px;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: 0.8s;
+  color : #f0021f;
+}
+
+
+#sublog:hover {
+  background: #f76375;
+  color: rgba(252, 252, 252);
+  width: 300px;
+}
+
+#sublog {
+  color: rgba(0, 0, 0, 0.6);
+  width: 300px;
+  height: 50px;
+  padding: 0 20px;
+  background: rgba(255, 105, 30, 0.4);
+  border: none;
+  font-size: 20px;
+  transition: 0.15s;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  display: block;
+  outline: none;
+  cursor: pointer;
+}
+
+#loading {
+  width: 40px;
+  margin-bottom: -12px;
+}
+
+#cat-body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+#cat-error {
+  display: block;
+  margin: 0 auto;
+}

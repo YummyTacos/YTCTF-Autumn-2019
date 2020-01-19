@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Epic Anime Battle</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <div id="header">
+        <h1>Epic Anime Battle<img id="fire" src="images/fire.gif" alt="Огонь" /></h1>
+        <div id="nice-line"></div>
+    </div>
+    <div id="main">
+        <div id="wrapper" v-if="loaded">
+            <div id="first-image">
+                <div class="image">
+                    <img :src="link1" alt="Cool person" v-on:click="winner1">
+                    <p class="cool" >Крутость: {{cool1}}</p>
+                    <img id="coolness1" class="coolness" src="images/plus_coolness_2.png" alt="" v-if="first">
+                </div>
+            </div>
+            <div id="rules">
+                <p>Какой персонаж круче?</p> 
+                <p>Тебе выбирать!</p>
+                <p>Просто тыкни на понравившегося</p>
+                <p>1 голос -> +1 к крутизне</p>
+                <p>Крутость -> крутизна/просмотры</p>
+            </div>
+            <div id="second-image">
+                <div class="image">
+                    <img :src="link2" alt="Cool person" v-on:click="winner2">
+                    <p class="cool">Крутость: {{cool2}}</p>
+                    <img id="coolness2" class="coolness" src="images/plus_coolness_2.png" alt="" v-if="second">
+                </div>
+            </div>
+            <div id="disable" v-if=first||second></div>
+        </div>
+        <div id="load" v-if="!loaded">
+            <img src="images/fire.gif" alt="">
+            <p>{{ message }}</p>
+        </div>
+    </div>
+    
+    <script src="js/firebase.js"></script>
+</body>
+</html>
